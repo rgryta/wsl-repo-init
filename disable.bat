@@ -1,0 +1,1 @@
+wsl --unregister wsl-repo
