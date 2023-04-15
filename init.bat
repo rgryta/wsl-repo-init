@@ -1,1 +1,1 @@
-powershell.exe "Start-Process powershell.exe -Verb RunAs -ArgumentList '-NoExit -ExecutionPolicy Bypass -file %~dp0\env\setup.ps1'"
+powershell.exe "Start-Process powershell.exe -Verb RunAs -ArgumentList '-NonInteractive -ExecutionPolicy Bypass -file %~dp0\env\setup.ps1'"

@@ -20,6 +20,10 @@ $scriptPath = split-path -parent $MyInvocation.MyCommand.Definition
 $distro = 'wsl-repo'
 $ignr = wsl --unregister $distro
 
-WSL-Ubuntu-Install -DistroAlias $distro -InstallPath $scriptPath
+WSL-Ubuntu-Install -DistroAlias $distro -InstallPath $scriptPath -Version focal
 
-wsl -d $distro -u root -e sh -c "apt-get install -y apt-utils sudo git"
+wsl -d $distro -u root -e sh -c "apt-get install -y apt-utils sudo git curl"
+wsl -d $distro -u root -e sh -c "echo ``wslpath -a '$scriptPath'``"
+
+Write-Host 'Installation finished. Closing in 5 seconds'
+Start-Sleep -Seconds 5
